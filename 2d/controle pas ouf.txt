@@ -1,0 +1,49 @@
+void controle ()
+{
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) //bouge à partir du clavier
+    {
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Z) and sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
+        {
+            anim.y = Up;
+            sprite_perso.move(-vitesse*attenu,-vitesse*attenu);
+        }
+         else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Z)and sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+        {
+            anim.y = Up;
+            sprite_perso.move(vitesse*attenu,-vitesse*attenu);
+        }
+        else
+        {
+            anim.y = Up;
+            sprite_perso.move(0,-vitesse);
+        }
+    }
+    else if(sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+    {
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::D)and sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+        {
+            anim.y = Down;
+            sprite_perso.move(vitesse*attenu,vitesse*attenu);
+        }
+        else if(sf::Keyboard::isKeyPressed(sf::Keyboard::S)and sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
+        {
+            anim.y = Down;
+            sprite_perso.move(-vitesse*attenu,vitesse*attenu);
+        }
+        else
+        {
+            anim.y = Down;
+            sprite_perso.move(0,vitesse);
+        }
+    }
+    else if(sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+    {
+        anim.y = Right;
+        sprite_perso.move(vitesse,0);
+    }
+    else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
+    {
+        anim.y = Left;
+        sprite_perso.move(-vitesse,0);
+    }
+}
